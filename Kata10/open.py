@@ -1,11 +1,12 @@
-def main():
-    open("/path/to/mars.jpg")
+def main():    
+    Try:
+        open("mars.jpg")
+        
+    except FileNotFoundError as err:
+        print("got a problem trying to read the file:", err)
 
 if __name__ == '__main__':
     main()
-try:
-    open('config.txt')
-except FileNotFoundError:
-    print("Couldn't find the config.txt file!")
+
 
 #Couldn't find the config.txt file!
