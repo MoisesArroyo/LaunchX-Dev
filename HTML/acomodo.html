@@ -16,13 +16,12 @@
 
         /* Estilo de header  es el titulo*/
         header {
-            background-color: #666;
-            padding: 30px;
+            background-color: rgb(187, 39, 101);
+            padding: 5px;
             text-align: center;
-            font-size: 35px;
-            color: red;
+            font-size: 30px;
+            color: #73C8DE;
         }
-
         /* Crear 2 columnas con la misma posición en la fila */
         nav {
             float: left;
@@ -32,30 +31,26 @@
             background: #ccc;
             padding: 20px;
         }
-
         nav ul {
             list-style-type: none;
             padding: 0;
         }
-
         article {
             float: left;
             padding: 20px;
             width: 70%;
-            background-color: #f1f1f1;
+            background-color: #c98686;
             height: 300px;
         }
-
         /* Clear floats after the columns */
         section::after {
             content: "";
             display: table;
             clear: both;
         }
-
         /* Estilo de footer */
         footer {
-            background-color: #777;
+            background-color: #1F29E0;
             padding: 10px;
             text-align: center;
             color: white;
@@ -64,7 +59,7 @@
         @media (max-width: 600px) {
             nav,
             article {
-                width: 100%;
+                width: 50%;
                 height: auto;
             }
         }
@@ -72,20 +67,29 @@
 </head>
 <body>
     <header>
-        <h2>Ciudades</h2>
+        <h2>My new page</h2>
     </header>
-
     <section>
         <nav>
             <ul>
-                <li><a href="#">Londres</a></li>
-                <li><a href="#">Paris</a></li>
-                <li><a href="#">Tokyo</a></li>
+                <li><a href="#">Who AM I?</a></li>
+                <li><a href="#">I like to</a></li>
+                <li><a href="#">Programmer</a></li>
             </ul>
         </nav>
         <article>
-            <h1>Londres</h1>
-            <p>Londres es la capital de Inglaterra y es la ciudad más popular del Reino Unido, es la ciudad mas poblada con 13 millones de habitantes en su área metropolitana</p>
+            <h1>Who AM I?</h1>
+            <p>Im a good guy!!</p>
+        </article>
+        <br>
+        <article>
+            <h1>I like to</h1>
+            <p>Im a good guy!!</p>
+        </article>
+        <br>
+        <article>
+            <h1>Programmer</h1>
+            <p>Im a good guy!!</p>
         </article>
     </section>
     <footer>
