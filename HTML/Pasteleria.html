@@ -4,30 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ESTRELLA</title>
     <style>
         body{
-            font: Firacode;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
         header{
-            background-color: rgb(228, 141, 177);
+            background-color: #F7C6F8;
             padding: 10px;
             text-align: center;
             font-size: 25px;
-            color: #73C8DE;
+            color: #5480e0;
+        }
+        nav {
+            float: left;
+            width: 30%;
+            height: 180px;
+            background: rgb(245, 48, 228);
+            padding: 20px;
+            
+        }
+        article
+        {
+            float: center;
+            padding: 40px;
+            width: 100%;
+            background-color: #933ee2;
+            height: 300px;
         }
     </style>
 </head>
 <body>
-    <header><h1>PASTELERÍA ESTRELLA</h1></header>
-    <main>
+    <header><h1>PASTELERÍA ESTRELLA</h1>
         <img src="img/Logo.png">
-    <h4>¿Quienes somos?</h4>
-    <p>Vendemos pasteles de diferentes sabores, colores y para toda clase de <strong>eventos: </strong></p>
-    <br>
-    <a href="#Chocolate">Chocolate</a>
-    <a href="#Fresa">Fresa</a>
-    <a href="#Tres Leches">Tres Leches</a>
+    </header>
+    <main>
+    <nav>
+        <h3>¿Quienes somos?</h3>
+        <p>Vendemos pasteles de diferentes sabores, colores y para toda clase de <strong>eventos: </strong></p>
+    </nav>
     <br>
     <h3>Tabla de sabores, precio y Tamaños</h3>
     <table>
@@ -62,32 +77,51 @@
             <td>Chico</td>
         </tr>
     </table>
-    <h3>Descripción de los productos</h3>
-    <h5 id = "Chocolate">Chocolate</h5>
-    <br><p>Es un <em>invreible sabor</em>cacao que nos deleita</p><br>
-    <h5 id = "Fresa">Fresa</h5>
-    <h5 id = "Tres Leches">Tres leches</h5>
+    <br>
+    <br><h2>Descripción de los pasteles</h2>
+    <table>
+        <ol><a href="#Chocolate">Chocolate</a></ol>
+        <ol><a href="#Fresa">Fresa</a></ol>
+        <ol><a href="#Tres Leches">Tres Leches</a></ol>
+        <ol><a href="#Rompope">Rompope</a></ol>
+    </table>
+    <hr>
+    <article>
+        <h3>Descripción de los productos</h3>
+        <h4 id = "Chocolate">Chocolate</h4>
+        <p>Es un <em>Increible sabor</em> cacao que nos deleita a su vez</p>
+        <h4 id = "Fresa">Fresa</h4>
+        <p>El sabor a fresas es inigualable</p>
+        <h4 id = "Tres Leches">Tres leches</h4>
+        <p>Te va fasinar la combinación, ademas que es idela para cualquier ocasión.</p>
+        <h4 id = "Rompope">Rompo</h4>
+        <p>Si no es una fiesta para niños y te deseas divertir, esta es una buena opción</p>
+    </article>
+    
     <hr>
     <div>
-    <h6>Haga su pedido</h6>
-    <form action="Ingresar correo">
-        <input type="text" placeholder="@correo.com" required>
-        <button type="submit">Enviar</button>
-    </form>
-    <form action="Ingresar direccion">
-        <input type="text" placeholder="calle" required>
-        <button type="submit">Agregar</button>
-    </form>
-    <p>¿Solicita algun ingrediente extra?</p>
-    <form action = "/Elegir">
-       <label for="Estrella"><input id= "Estrella" 
-        type="radio" name="Estrella-Chispas"> Estrella</label><br>
-       <label for = "Chispas"><input id = "Chispas" 
-        type="radio" name="Estrella-Chispas"> Chispas</label>
-        <br><label for="viene?"><input id= "viene?" type="checkbox">Viene?</label>
-        <br><input type="checkbox">se lo llevo?
-        <br> 
+        <h2>Haga su pedido</h2>
+        <form action="Ingresar correo">
+            <input type="text" placeholder="@correo.com" required>
+            <button type="submit">Enviar</button>
         </form>
+        <form action="Ingresar direccion">
+            <input type="text" placeholder="calle" required>
+            <button type="submit">Agregar</button>
+            <label for="numero1"></label><br>
+            <input type="number" placeholder = "numero1" required id="numero1" name="numero1">
+            <button type="submit">Agregar</button>
+        </form>
+        <hr>
+        <h3>¿Solicita algun ingrediente extra?</h3>
+        <form action = "/Elegir">
+        <label for="Estrella"><input id= "Estrella" 
+            type="radio" name="Estrella-Chispas"> Estrella</label><br>
+        <label for = "Chispas"><input id = "Chispas" 
+            type="radio" name="Estrella-Chispas"> Chispas</label>
+            <br><label for="Azucar extra"><input id= "viene?" type="checkbox">Azucar extra</label>
+            <br><input type="checkbox">Velas<br> 
+            </form>
     </div>
     </main>
     <footer>
