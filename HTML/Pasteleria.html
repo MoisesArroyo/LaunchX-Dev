@@ -23,7 +23,7 @@
     <main>
         <img src="img/Logo.png">
     <h4>¿Quienes somos?</h4>
-    <p>Vendemos pasteles de diferentes sabores, colores y para toda clase de eventos</p>
+    <p>Vendemos pasteles de diferentes sabores, colores y para toda clase de <strong>eventos: </strong></p>
     <br>
     <a href="#Chocolate">Chocolate</a>
     <a href="#Fresa">Fresa</a>
@@ -64,8 +64,34 @@
     </table>
     <h3>Descripción de los productos</h3>
     <h5 id = "Chocolate">Chocolate</h5>
+    <br><p>Es un <em>invreible sabor</em>cacao que nos deleita</p><br>
     <h5 id = "Fresa">Fresa</h5>
     <h5 id = "Tres Leches">Tres leches</h5>
+    <hr>
+    <div>
+    <h6>Haga su pedido</h6>
+    <form action="Ingresar correo">
+        <input type="text" placeholder="@correo.com" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <form action="Ingresar direccion">
+        <input type="text" placeholder="calle" required>
+        <button type="submit">Agregar</button>
+    </form>
+    <p>¿Solicita algun ingrediente extra?</p>
+    <form action = "/Elegir">
+       <label for="Estrella"><input id= "Estrella" 
+        type="radio" name="Estrella-Chispas"> Estrella</label><br>
+       <label for = "Chispas"><input id = "Chispas" 
+        type="radio" name="Estrella-Chispas"> Chispas</label>
+        <br><label for="viene?"><input id= "viene?" type="checkbox">Viene?</label>
+        <br><input type="checkbox">se lo llevo?
+        <br> 
+        </form>
+    </div>
     </main>
+    <footer>
+        <p><small>Derechos reservados: Moisés Isaí Arroyo</small> </p>
+    </footer>
 </body>
 </html>
