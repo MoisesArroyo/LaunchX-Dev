@@ -1,0 +1,84 @@
+h2 {
+  color: red;
+  font-size: 80px; /*Tamaño de la letra*/
+  font-family: 'Shadows Into Light', cursive;
+}
+
+h3 {
+  color: green;
+  font-size: 15px;
+  font-family: 'Permanent Marker', cursive;
+}
+
+h1 {
+  color:aqua;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p{
+  color: plum;
+  font-family: 'Roboto', sans-serif;
+}
+
+input{
+  color: blue;
+}
+/*Etiquetas para clases*/
+.lista-de-gatos {
+  color: chocolate;
+}
+
+ul,
+ol {
+  color: chocolate;
+  font-size: 12px;
+}
+.img-div {
+  width: 200px;
+  border-width: 5px;
+  border-color: darkblue;
+  border-style: solid dashed dotted ridge;
+}
+.bordes-redondeados{
+  border-radius: 50%;
+}
+
+.contenedor-listas
+{
+  background-color: blue;
+}
+#Titulo-app{
+  font-size: 30px;
+  color:cornflowerblue;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#imagen-gatos{
+  border-radius: 30%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: cadetblue;
+}
+#lista-gatos-aman{
+  font-size: 12px;
+  color: gold;
+}
+#lista-gatos-odian{
+  font-size: 12px;
+  color:lightsalmon;
+}
+div{
+  background-color: aqua;
+}
+img {
+  padding: 15px;
+  background-color: yellow;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+}
+
+
+
+
+
+
