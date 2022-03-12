@@ -2,17 +2,16 @@
 
 ¿Qué es?
 HyperText Markup Language.
-Lenguaje estandar para la creación de paginas WEB.
+Lenguaje estándar para la creación de paginas WEB.
 Nos permite darle un esqueleto al cuerpo.
 
 ## Etiquetas básicas
 
-Son los titulos de lenguaje
-tods estos estan dados por la letra h para los titulos.
+Son los títulos de lenguaje toda estos están dados por la letra h para los títulos.
 
 ## Parrafos
 
-Estos estan dados por la letra p.
+Estos están dados por la letra p.
 > < p >
 
 ## Elementos compuestos
