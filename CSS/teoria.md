@@ -12,17 +12,17 @@ Lenguaje basado en reglas. Las reglas determinaran el estilo que se aplicara a n
 
 El estilo se añade directamente a la etiqueta de apertura del elemento HTML
 Ejemplo
-<h2 style="color: red">Moises</h2>
+< h2 style="color: red">Moises< /h2 >
 
 Añadimos el elemento style dentro de head para describir el estilo
 Ejemplo:
-<head>
-    <style>
+< head >
+    < style >
         h2 {
             color: blue;
         }
-    </style>
-</head>
+    < /style >
+< /head >
 
 Todos los títulos h2 tendrán este color dentro de nuestro archivo html
 Se cre aun archivo tipo .css para definir los estilos de nuestro html
@@ -52,20 +52,25 @@ De igual forma podemos agregar en una línea lo que son los margenes. De igual f
 - Padding es la distancia entre la imagen y el contenido de ese elemento y su borde.
 - Margin es la distancia entre el final del padding y el elemento consiguiente cercano.
 
-## Selectores de Atributos:
+## Selectores de Atributos
 
-### Selectores de presencia y valor:
+### Selectores de presencia y valor
 
 - Estos selectores permiten seleccionar un elemento solo a partir de la presencia de un atributo(por ejemplo href) o partir de varias coincidencias diferentes con respecto al valor del atributo
 
 ## Unidades Absolutas y relativas
 
 - 200px de ancho
-    * Pixeles
+
+* Pixeles
+
 - 20vw de Ancho 
-    * Viewport, son unidades relativas por que son relativas a otros valores
+
+* Viewport, son unidades relativas por que son relativas a otros valores
+
 - 15 em de Ancho    
-    * Depende del tamaño de la letra del contenedor y el tamaño de la letra.
+
+* Depende del tamaño de la letra del contenedor y el tamaño de la letra.
 
 ### Unidades de longitudes absolutas 
 
