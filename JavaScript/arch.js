@@ -178,5 +178,20 @@ console.log(programming[5.6]); //undefined
 
 //Notación de corchetes ultimo carácter
 
+var otraCadena;
 
+/*
+El indice siempre es longitud -1 por que comenzamos a contar desde 0
+JavaScript -> 10 = 10-1 = 9 es el índice final
+*/
+otraCadena="python";
+console.log(otraCadena[otraCadena.length-1]);
+
+var miCadena2;
+
+/*El penúltimo indice es longitud -2
+
+*/
+miCadena2 = "Python";
+console.log(miCadena2[miCadena2.length-2]);
 
