@@ -25,7 +25,7 @@ console.log(x);//ambos 2
 console.log(y);
 
 var suma = 7 + 12;
-console.logU(suma);
+console.log(suma);
 var resta = 8 - 3;
 console.log(resta);
 resta = 4-19;
