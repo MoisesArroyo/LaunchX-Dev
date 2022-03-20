@@ -195,3 +195,13 @@ var miCadena2;
 miCadena2 = "Python";
 console.log(miCadena2[miCadena2.length-2]);
 
+//PALABRAS EN BLANCO
+
+var palabrasEnBlanco;
+
+var miSustantivo = "perro"
+var miAdjetivo = "negro";
+var miVerbo = "corrió";
+var miAdverbio = "rápidamente";
+
+var palabrasEnBlanco = "El"+miSustantivo+"";
