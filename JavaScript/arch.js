@@ -193,7 +193,8 @@ var miCadena2;
 
 */
 miCadena2 = "Python";
-console.log(miCadena2[miCadena2.length-2]);
+n = 3;
+console.log(miCadena2[miCadena2.length-n]);
 
 //PALABRAS EN BLANCO
 
@@ -204,4 +205,197 @@ var miAdjetivo = "negro";
 var miVerbo = "corrió";
 var miAdverbio = "rápidamente";
 
-var palabrasEnBlanco = "El"+miSustantivo+"";
+var palabrasEnBlanco = "El"+miSustantivo+" "+miAdjetivo+" "+miVerbo+" "+miAdverbio;
+console.log(palabrasEnBlanco);
+
+/*El ultimo indice siempre es longitud -1
+no arrojara el valor de "t" */ 
+
+miCadena3 = "JavaScript";
+console.log(miCadena3[miCadena3.length -1 ]);
+
+/*Estrucuturas arrays*/
+
+var miArreglo = ["John", 24];
+console.log(miArreglo);
+
+var estudiantes = ["Moisés", "Ximena"];
+console.log(estudiantes);
+
+var notas=[98, 100, 32, 34, 124];
+console.log(notas);
+
+ /*Los arreglos en java scrip pueden tener cualquier tipo de dato*/
+
+ var listaEstu=[["Moises", 10],["Ximena", 10]];
+ console.log(listaEstu);
+
+ listaDePrecios[["Camisa",34],["Jeans", 89],["Blusa", 56], ["T-shirt", 23]];
+console.log(listaDePrecios);
+var datos=[[3.4, 5.6, 6.2],[3,6,1,2], [7,7,3]];
+console.log(datos);
+
+var miArreglo = [10, 20, 30];
+/*
+Indices 0, 1, 2
+*/
+console.log(miArreglo[1]);
+
+var suma1 = miArreglo[0]+miArreglo[1]+miArreglo[2];
+console.log(suma1); 
+var miArreglo3 = [10, 20, 30];
+miArreglo3[0] = "Hola";
+miArreglo3[1] = [1, 2, 3];
+miArreglo3[2] = 34;
+console.log(miArreglo3);
+
+//Acceder a arreglos multidimensionales
+
+var miArreglo2 = [[1, 2, 3],[4, 5, 6], [7,8,9]];
+
+/*
+Indices Internos: 
+*/
+console.log(miArreglo2[0]); //1 , 2, 3
+console.log(miArreglo2[1][2]); // 6
+console.log(miArreglo2[1][0]); // 4
+
+//Push
+
+var estaciones = ["Invierno", "otoño", "Primavera"];
+var estación;
+estaciones.push("Verano"); //Añade al final de la lista;
+
+console.log(estaciones);
+
+estación=estaciones.pop(); //Remueve el ultimo elemento de un arreglo
+console.log(estaciones);
+console.log(estación);
+
+estaciones.shift(); //añade al final
+
+console.log(estaciones);
+
+estaciones.unshift("Verano"); //Agregar al principio del arreglo
+console.log(estaciones);
+
+/*Lista de compras*/
+var miListaCompras = [["Cereal", 3],["Manzanas", 2],["galletas", 4]];
+
+console.log("Voy a comprar" + miListaCompras[0][0] +"unidades de" + miListaCompras[0][1]+ ".");
+
+console.log("Voy a comprar" + miListaCompras[1][0] +"unidades de" + miListaCompras[1][1]+ ".");
+
+
+// Funciones
+
+function mostrarMensaje()
+{   console.log("¡Hola Mundo!");
+
+}
+mostrarMensaje();
+mostrarMensaje();
+mostrarMensaje();
+
+// Argumentos
+function sumar3(num1, num2)
+{   var suma = num1+ num2;
+    console.log("El resultado de: "+a +"+"+ b+"="+suma);
+}
+sumar3(3, 2);
+var a, b;
+a = 2;
+b = 10;
+sumar3(a, b);
+
+function concatenar(cadena1, cadena2, cadena3)
+{   console.log(cadena1 + " "+ cadena2 +"cadena3" );
+}
+
+concatenar("Estoy", "Aprendiendo", "a programar");
+var miVarGlo=5;
+console.log(miVarGlo);
+
+function miFuncion()
+{
+    console.log(miVarGlo);
+}
+miFuncion();
+console.log(miVarGlo);
+
+// Ámbito Local
+
+function miFuncion1()
+{
+    var miVariableLocal = 4;
+    console.log(miVariableLocal);
+}
+miFuncion1();
+
+var miNombre = "Xime";
+
+function mostraMinombre()
+{
+    var miNombre = "Moi";
+    console.log(miNombre);
+}
+mostraMinombre();
+console.log(miNombre);
+
+// Retornar valor
+function sumar5(a, b)
+{   return a + b;   }
+
+console.log(sumar5(a, b));
+var resultado = sumar5(5, 3);
+console.log(resultado);
+function suma4(a, b)
+{   console.log(a+b);
+    return a + b;
+}
+console.log(suma4(5, 3)); //Undefined if not return
+
+// Salida 8, 8
+
+function crearCadenaConMeta(lenguajePro)
+{   return "Mi meta es aprender" + lenguajePro; }
+var miMeta=crearCadenaConMeta("JavaScript");
+console.log(miMeta);
+
+// Permanecer
+/* Proximo en la Fila
+En informática una cola(queue) es una estructura de datos abstracta en la cual los elementos se mantienen en orden. Los nuevos elementos se pueden añadir al final de la cola y los elementos previos se reiteran del principio de la cola.
+
+Define una función proximoEnLaFila que tome un arreglo(arreglo)y un numero(elemento) como argumentos. Agrega el número al final del arreglo y luego elimina el primer elemento del arreglo. La función proximoEnLaFinal debe retornar el elemento que fue removido.
+*/
+
+function proximoEnLaFila(arr, elem)
+{   arr.push(elem); //Agregar al final del arreglo
+    arr.shift(); //Remover el primer elemento.
+
+}
+
+var arreglo3 = [1,2,3,4,5];
+
+console.log("Antes: "+ JSON.stringify(arreglo3));
+// Función para mostrar los arreglos en consola
+console.log(proximoEnLaFila(arreglo3, 6)); 
+console.log("Después: "+ JSON.stringify(arreglo3));
+
+//Boleanos
+
+console.log(true); //Únicas manera de como se escribe, NO True or False, todo en minúsculas
+console.log(false);
+
+//Operador de igualdad
+
+console.log( 5 == 5 ); //true
+console.log( 6 == 5 ); //false
+console.log("Hola"=="Hola") //true
+console.log("Hola"=="Hola1") //false
+console.log([1, 2, 3] == [1, 2, 3]); //false
+//No compara arreglos
+
+
+
+
