@@ -185,3 +185,53 @@ myStr = "Job";
 También puedes usar notación de corchetes para obtener el carácter en otras posiciones dentro de una cadena.
 
 Recuerda que las computadoras empiezan a contar desde 0, así que el primer carácter es en realidad el carácter cero.
+
+
+## Accede a arreglos multidimensional con índices
+
+Se puede pensar que un arreglo multidimensional es como un arreglo de arreglos. Cuando usas corchetes para acceder a tu arreglo, el primer par de corchetes se refiere a las entradas en el arreglo externo (el primer nivel) y cada par adicional de corchetes se refiere al siguiente nivel de entradas.
+
+## Manipula arreglos con push()
+
+Una forma fácil de añadir datos al final de un arreglo es a través de la función push().
+
+.push() toma uno o más parámetros y los "empuja" al final del arreglo.
+
+## Manipula arreglos con pop()
+
+Otra manera de cambiar los datos en un arreglo es con la función .pop().
+
+.pop() se utiliza para sacar un valor del final de un arreglo. Podemos almacenar este valor sacado asignándolo a una variable. En otras palabras, .pop() elimina el último elemento de un arreglo y devuelve ese elemento.
+
+Cualquier tipo de entrada puede ser sacada de un arreglo: números, cadenas, incluso arreglos anidados.
+
+## Manipula arreglos con shift()
+
+pop() siempre elimina el último elemento de un arreglo. ¿Qué tal si quieres eliminar el primero?
+
+Ahí es donde entra .shift(). Funciona igual que .pop(), excepto que elimina el primer elemento en lugar del último.
+
+## Lista de compras
+
+Crea una lista de compras en la variable myList. La lista debe ser un arreglo multidimensional que contenga varios sub-arreglos.
+
+El primer elemento de cada sub-arreglo debe contener una cadena con el nombre del artículo. El segundo elemento debe ser un número que represente la cantidad, por ejemplo.
+
+## Escribe JavaScript reutilizable utilizando funciones
+En JavaScript, podemos dividir nuestro código en partes reutilizables llamadas funciones.
+
+Puedes llamar o invocar esta función usando su nombre seguido por paréntesis, así: functionName(); Cada vez que se llame la función se imprimirá el mensaje Hello World en la consola de desarrollo. Todo el código entre las llaves se ejecutará cada vez que se llame la función.
+
+## Pasa valores a las funciones utilizando argumentos
+
+Los parámetros son variables que actúan como marcadores de posición para los valores que deben ser introducidos en una función cuando se llama. Cuando se define una función, se define típicamente junto con uno o más parámetros. Los valores reales que son introducidos (o "pasados") a una función cuando se llama son conocidos como argumentos.
+
+
+## Devuelve un valor de una función utilizando "Return"
+Podemos pasar valores a una función con argumentos. Puedes utilizar una declaración de devolución (return) para enviar un valor fuera de una función.
+
+## Ámbito global y funciones
+
+En JavaScript, el ámbito se refiere a la visibilidad de las variables. Las variables definidas fuera de un bloque de función tienen un ámbito Global. Esto significa que pueden ser observadas desde cualquier lugar en tu código JavaScript.
+
+Las variables que se declaran sin las palabras clave let o const se crean automáticamente en el ámbito global. Esto puede crear consecuencias no intencionadas en cualquier lugar de tu código o al volver a ejecutar una función. Siempre debes declarar tus variables con let o const.

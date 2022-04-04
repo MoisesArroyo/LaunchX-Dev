@@ -395,7 +395,3 @@ console.log("Hola"=="Hola") //true
 console.log("Hola"=="Hola1") //false
 console.log([1, 2, 3] == [1, 2, 3]); //false
 //No compara arreglos
-
-
-
-
