@@ -395,3 +395,349 @@ console.log("Hola"=="Hola") //true
 console.log("Hola"=="Hola1") //false
 console.log([1, 2, 3] == [1, 2, 3]); //false
 //No compara arreglos
+
+//Operador de igualdad estricta
+console.log(9==9); //true
+console.log(9=="9"); //true
+console.log(9 === "9") //false
+console.log(9===9); //true
+
+var a1;
+var b1;
+
+a1 = 5;
+b1 = 5;
+
+console.log(a == b); //true
+console.log(a===b); //true
+b1=8;
+console.log(a == b); //false
+console.log(a===b); //false
+b = "5"
+console.log(a == b); //true
+console.log(a===b); //false
+
+
+a = "JavaScript";
+b = "JavaScript";
+
+console.log(a == b); //true
+console.log(a===b); //true
+
+//Operador de desigualdad
+
+console.log(9 != 6); //true
+console.log(9 != 9); //false
+console.log("JavaScript" != "JavaScript"); //false
+console.log([1,2,3] != [1,2,3]); //true porque son diferentes por la posicion de memoria en el arreglo por lo tanto como reusltado da un verdadero son dif.
+ 
+
+//Operador de desigualdad estricta
+
+console.log(1 != "1"); //false
+console.log(1 !== "1"); //true
+
+//Operador mayor que
+console.log(6>5);//true
+console.log(3>10); //false
+console.log("B">"A"); //True, compara cadenas por la posicion en su
+console.log("ACB"> "ABC"); //compara letra por letra para averigaur cual es el dato mayor C>B
+console.log("AB">"A");//True
+console.log("Mundo">"Hola"); //Tienen mas caracteres, es mayor
+console.log("A">"a");//false
+console.log("a">"A");//true
+
+//Mayor o igual que
+console.log( 5 > 5 ); // false
+console.log(5>=5); //true
+console.log(6>=5); //true
+console.log(4>=5); //false
+
+//operador menor que
+
+console.log( 5 < 5 ); // false
+console.log(5<=5); //true
+console.log(6<=5); //false
+console.log(4<=5); //true
+console.log(10<3); //false
+console.log("A"<"B"); //true
+console.log("ABC"<"ACB"); //true
+
+var a = 15;
+var b = 7;
+
+console.log(a>=b); //true
+console.log(a<=b); // false
+console.log(a>b); //true
+console.log(a<b); // false
+
+//operador lógico
+
+console.log(true && true);
+console.log(true && false);
+console.log(false && true);
+console.log(false && false);
+var a2=9;
+console.log((a2>5)&&(a2<10)); //true
+a2=3
+console.log((a2>5)&&(a2<10)); //false
+
+//Operador logico OR
+
+/* |X|Y| X|Y
+    T|T| T
+    T|F| T
+    F|T| T
+    F|F| F
+*/
+console.log(true || true);
+console.log(true || false);
+console.log(false || true);
+console.log(false || false);
+
+console.log((a2>5)||(a2<10)); //true
+a2=23
+console.log((a2<5)||(a2<=15)); //true
+
+//operador lógico not
+
+console.log();
+
+console.log(!true);
+console.log(!false);
+var a = 8;
+console.log(!(a > 5)); //false, no dejar un espacio entre parentesis y !
+console.log(!(a<5)); //true
+
+//condicionales
+ var x = 5;
+if(true)
+{   console.log("la condicion es verdadera");
+}
+if(x>2 && x < 10)
+{
+    console.log("la condicion es verdadera");    
+}
+var estacion1 = "Verano";
+if(estacion1 == "Verano")
+{
+    console.log("si es verano");
+}
+console.log("despues del condicional");
+
+
+//Clausula Else
+
+if(false){   
+    console.log("La condion es verd");
+}
+else{
+    console.log("es falsa"); 
+}
+var y=1;
+if(y<2)
+{
+    console.log("verdadera");
+}
+else{
+    console.log("falso");
+}
+//IF ELSE
+
+function clasificarValor(valor1)
+{   if(valor1 % 2==0)
+    {
+        console.log("Divisible entre 2.");
+    }
+    else if(valor %3 ==0)
+    {
+        console.log("es divisible entre 3");
+    }    
+    else{
+        console.log("No es divisible");
+    }
+}
+clasificarValor(2);
+clasificarValor(3);
+clasificarValor(6);
+clasificarValor(5);
+
+//condicionales de orden lógico
+
+function clasificarValor1(valor2)
+{
+    if((valor2 < 5)||(valor2 <10))
+    {
+        console.log("Menor que 5.");
+    }
+    else{
+        console.log("Mayor o igual a 10");
+    }
+}
+function interpretarIMC(indiceDeMasaCorporal)
+{   if(indiceDeMasaCorporal<18.5 )
+    {   console.log("Bajo Peso");
+    }
+    else if(indiceDeMasaCorporal<=24.9)
+    {   console.log("Normal");
+    }
+    else if(indiceDeMasaCorporal <=29.9)
+    {   console.log("Soprepeso");
+    }
+    else
+    {   console.log("Obeso");
+    }
+}
+interpretarIMC(17);
+interpretarIMC(22);
+interpretarIMC(28);
+interpretarIMC(32);
+
+//Código de Golf
+
+/* 
+En el juego de gold cada hoyo tiene un par que representa
+el numero de promedio de golpes que se spera que haga un golfista para 
+introducir la pelota en el hoyo.
+Hay un nombre diferente dependiendo de que tan encima o por debajo del par
+esten tus golpes.
+retorna la cadena correcta según esta tabla que muestra que los golpes en orden
+de mayor a menor prioridad.
+
+Golpes     Retornar
+1           "Hole-in-one!"
+<= par - 2  "Eagle"
+par - 1     "Birdie"
+par         "Par"
+"par + 1"   "Bogey"
+par + 2     "Double Bogey"
+>= par + 3  "Go Home!"
+
+par y golpes siempre seran numericos y positivos.
+*/
+
+function puntajeDeGolf(par, golpes)
+{   if(golpes == 1)
+    {
+        return "Hole-in-one!";
+    }
+    else if(golpes <= par-2)
+    {
+        return "Eagle"
+    }
+    else if(golpes == par-1)
+    {
+        return "Birdie";
+    }
+    else if(golpes == par)
+    {
+        return par;
+    }
+    else if(golpes == par+1)
+    {
+        return "Bogey";
+    }
+    else if(golpes == par+2 )
+    {
+        return "Double Bogey";
+    }
+    else if(golpes>= par + 3)
+    {
+        return "Go Home";
+    }
+}
+console.log(puntajeDeGolf(4,1));
+console.log(puntajeDeGolf(4,2));
+console.log(puntajeDeGolf(4,4));
+console.log(puntajeDeGolf(4,6));
+console.log(puntajeDeGolf(4,7));
+
+//sentencias Switch
+
+function clasificarValor3(valor3)
+{   var respuesta;
+    switch(valor)
+    {   case 1:
+            respuesta = "alpha";
+            break;
+        case 2:
+            respuesta = "betha";
+            break;
+        case 3:
+            respuesta = "gamma";
+            break;
+        case 4:
+            respuesta = "delta";
+            break;
+        default:
+            respuesta = "No seas tonto, no hay este numero";
+    }   
+    return respuesta;
+}
+console.log(clasificarValor3(2));
+console.log(clasificarValor3(7));
+console.log(clasificarValor3(1));
+
+var producto4 = "hamburguesa";
+switch(product6)
+{   case "pizza":
+        console.log("la pizza básica cuesta $10.55");
+        break;
+    case "hamburguesa":
+        console.log("la hamburguesa básica cuesta $6.78");
+        break;
+    case "helado":
+        console.log("el helado grande cuesta $14.78");
+        break;
+}
+console.log("Luego de switch");
+
+//Opción predeterminada
+
+function seleccionarIdioma(valor5)
+{   var idioma;
+    switch(valor)
+    {   case 1:
+            idioma = "Español";
+            break;
+        case 2:
+            idioma = "Frances";
+        case 3:
+            idioma = "Italiano";
+            break;
+        default:
+            idioma="Ingles";
+            break;
+    }
+    return idioma;
+}
+console.log(seleccionarIdioma(5));
+console.log(seleccionarIdioma(2));
+console.log(seleccionarIdioma(1));
+console.log(seleccionarIdioma(3));
+
+//Multiples opciones Switch
+
+function clasificarVolumen(num3)
+{   var volumen;
+    switch(num3)
+    {   case 1:
+            volumen = "bajo";
+            break;
+        case 2:
+        case 3:
+            volumen = "Intermedio";
+            break;
+        case 4:
+        case 5:
+        case 6:
+            volumen = "Alto";
+            break;            
+    }
+    return volumen;
+}
+console.log(clasificarVolumen(3));
+console.log(clasificarVolumen(5));
+
+//Reemplazar if..else por switch
+

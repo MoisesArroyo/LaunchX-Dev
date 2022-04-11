@@ -351,3 +351,4 @@ El operador menor o igual que (<=) compara el valor de dos números. Si el núme
 
 Comparaciones con el operador lógico "and"
 A veces tendrás que probar más de una cosa a la vez. El operador lógico and (&&) devuelve true si y solo si los operandos a la izquierda y a la derecha son verdaderos.
+
