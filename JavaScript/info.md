@@ -352,3 +352,202 @@ El operador menor o igual que (<=) compara el valor de dos números. Si el núme
 Comparaciones con el operador lógico "and"
 A veces tendrás que probar más de una cosa a la vez. El operador lógico and (&&) devuelve true si y solo si los operandos a la izquierda y a la derecha son verdaderos.
 
+
+
+## Comparaciones con el operador lógico "or"
+
+El operador lógico or (||) devuelve true si cualquiera de los operandos es true. De lo contrario, devuelve false.
+
+El operador lógico or se compone de dos símbolos de barra vertical: (||). Este se puede encontrar normalmente entre las teclas de tabulación y escape.
+
+## Introducción a las sentencias "Else"
+
+Cuando la condición en una sentencia if es verdadera, se ejecutará el bloque de código que va a continuación. ¿Qué sucede cuando la condición es falsa? Normalmente no debería ocurrir nada. Con la sentencia else, se puede ejecutar un bloque alternativo de código.
+
+## Introducción a las sentencias "Else If"
+Si tienes múltiples condiciones que necesitan ser resueltas, puedes encadenar sentencias if junto con sentencias else if.
+
+## Orden lógico de las sentencias "if else"
+
+El orden es importante en las sentencias if, else if.
+La función se ejecuta de arriba a abajo, por lo que habrá que tener cuidado con qué sentencia va primero.
+
+## Encadena sentencias if else
+
+Las sentencias if/else pueden ser encadenadas para crear una lógica compleja. Aquí hay pseudocódigo de múltiples declaraciones if / else if encadenadas
+
+## Código de golf
+En el juego de golf cada hoyo tiene un par que significa el número promedio de strokes (golpes) que se espera que haga un golfista para introducir la pelota en un hoyo para completar la jugada. Dependiendo de qué tan por encima o por debajo del par estén tus strokes, hay un nombre diferente.
+
+Tu función recibirá los argumentos par y strokes. Devuelve la cadena correcta según esta tabla que muestra los golpes en orden de prioridad; superior (más alto) a inferior (más bajo):
+
+## Seleccionando entre muchas opciones con declaración switch
+
+Si tienes muchas opciones para elegir, usa una declaración switch. Una sentencia switch prueba un valor y puede tener muchas sentencias case que definen varios valores posibles. Las sentencias se ejecutan desde el primer valor case coincidente hasta que se encuentra un break.
+
+## Agrega una opción predeterminada en las declaraciones switch
+
+En una declaración switch puede que no seas capaz de especificar todos los valores posibles como declaraciones de case (caso). En su lugar, se puede añadir la declaración default, la cual se ejecutará si no se encuentran declaraciones case. Piensa en ella como la última sentencia else en una cadena if/else.
+
+## Múltiples opciones idénticas en las declaraciones "switch"
+Si la sentencia break es omitida en un caso (case) de una sentencia switch, las siguientes sentencias case serán ejecutadas hasta encontrar un break.
+
+## Devuelve valores booleanos desde funciones
+
+Podrás recordar que en Comparación con el operador de igualdad todos los operadores de comparación devuelven un valor booleano true, o false.
+
+## Patrón de devolución anticipado para funciones
+Cuando se alcanza una sentencia return, la ejecución de la función actual se detiene y el control se devuelve a la ubicación de la llamada.
+
+```javascript
+function myFun() {
+  console.log("Hello");
+  return "World";
+  console.log("byebye")
+}
+myFun();
+```
+
+Lo anterior mostrará la cadena Hello en la consola y devolverá la cadena World. La cadena byebye nunca se mostrará en la consola, porque la función termina en la sentencia return.
+
+Modifica la función abTest para que cuando a o b sean menores que 0 la función salga inmediatamente con un valor undefined.
+
+Sugerencia
+Recuerda que undefined es una palabra clave, no una cadena.
+
+## Conteo de cartas
+En el juego de casino Blackjack el jugador puede sacarle ventaja a la casa llevando un registro del numero relativo de cartas altas y bajas que quedan en la baraja. Esto es llamado conteo de cartas.
+
+Tener más cartas altas en la baraja es una ventaja para el jugador. Se le asigna un valor a cada carta de acuerdo a la siguiente tabla. Cuando el conteo es positivo, el jugador debería apostar alto. Cuando el conteo da 0 o negativo, el jugador debería apostar bajo.
+
+| Cambios del conteo | Cartas |
+| -- | -- |
+| +1	| 2, 3, 4, 5, 6 |
+| 0 |	7, 8, 9 |
+| -1 |	10, 'J', 'Q', 'K', 'A' |
+
+Escribirás una función para contar cartas. Recibirá un parámetro card (carta) que puede ser un número o una cadena y aumentar o reducir la variable global count (conteo) de acuerdo al valor de la carta (observa la tabla). La función devolverá una cadena con el conteo actual y la cadena Bet (Apuesta) si el conteo es positivo, o Hold (Espera) si el conteo es cero o negativo. El conteo actual y la decisión del jugador (Bet o Hold) deben estar separados por un solo espacio.
+
+Resultados de ejemplo: -3 Hold o 5 Bet
+
+Sugerencia
+NO reinicies count a 0 cuando el valor sea 7, 8 o 9. NO devuelvas un arreglo.
+NO incluyas comillas (individuales o dobles) en el resultado.
+
+
+## Construye objetos en JavaScript
+Es posible que hayas escuchado el término objeto (object) antes.
+
+Los objetos son similares a los arreglos (arrays), excepto que en lugar de usar índices para acceder y modificar sus datos, accedes a los datos en objetos a través de propiedades (properties).
+
+Los objetos son útiles para almacenar datos de forma estructurada y pueden representar objetos del mundo real, como un gato.
+
+Por ejemplo, aquí hay un objeto de gato:
+```javascript
+const cat = {
+  "name": "Whiskers",
+  "legs": 4,
+  "tails": 1,
+  "enemies": ["Water", "Dogs"]
+};
+```
+En este ejemplo, todas las propiedades se almacenan como cadenas, como name, legs y tails. Sin embargo, también puedes utilizar números como propiedades. Incluso puedes omitir las comillas para las propiedades de cadenas de una sola palabra, de la siguiente manera:
+```javascript
+const anotherObject = {
+  make: "Ford",
+  5: "five",
+  "model": "focus"
+};
+```
+Sin embargo, si tu objeto tiene propiedades que no son cadenas, JavaScript las convertirá automáticamente en cadenas.
+
+## Accede a propiedades de objetos con notación de puntos
+
+Hay dos maneras de acceder a las propiedades de un objeto: notación de puntos (.) y notación de corchetes ([]), similar a un arreglo.
+
+La notación de puntos es lo que se usa cuando conoces el nombre de la propiedad a la que intentas acceder con antelación.
+
+## Accede a propiedades de objetos con notación de corchete
+
+La segunda manera de acceder a las propiedades de un objeto es con la notación de corchetes ([]). Si la propiedad del objeto al que intentas acceder tiene un espacio en el nombre, necesitarás usar notación de corchetes.
+
+Sin embargo, también puedes utilizar la notación de corchetes en las propiedades de objeto sin espacios.
+
+Aquí hay un ejemplo de cómo usar la notación de corchetes para leer la propiedad de un objeto:
+
+```javascript
+const myObj = {
+  "Space Name": "Kirk",
+  "More Space": "Spock",
+  "NoSpace": "USS Enterprise"
+};
+
+myObj["Space Name"];
+myObj['More Space'];
+myObj["NoSpace"];
+```
+
+## Accede a propiedades de objetos con variables
+Otro uso de la notación de corchetes en objetos es acceder a una propiedad que está almacenada como el valor de una variable. Esto puede ser muy útil para iterar a través de las propiedades de un objeto o para acceder a una tabla de búsqueda.
+
+Aquí hay un ejemplo del uso de una variable para acceder a una propiedad:
+```javascript
+const dogs = {
+  Fido: "Mutt",
+  Hunter: "Doberman",
+  Snoopie: "Beagle"
+};
+
+const myDog = "Hunter";
+const myBreed = dogs[myDog];
+console.log(myBreed);
+```
+La cadena Doberman se mostrará en la consola.
+
+Otra forma de usar este concepto es cuando el nombre de la propiedad se recoge dinámicamente durante la ejecución del programa, de la siguiente manera:
+```javascript
+const someObj = {
+  propName: "John"
+};
+
+function propPrefix(str) {
+  const s = "prop";
+  return s + str;
+}
+
+const someProp = propPrefix("Name");
+console.log(someObj[someProp]);
+```
+
+someProp tendrá una cadena con un valor propName y la cadena John se mostrará en la consola.
+
+Ten en cuenta que no usamos comillas alrededor del nombre de la variable cuando la usamos para acceder a la propiedad porque utilizamos el valor de la variable, no el nombre.
+
+
+## Actualizando las propiedades de un objeto
+
+Después de haber creado un objeto de JavaScript, puedes actualizar sus propiedades en cualquier momento tal y como actualizarías cualquier otra variable. Puedes utilizar tanto la notación de puntos como la notación de corchetes para actualizar.
+
+## Añade nuevas propiedades a un objeto de JavaScript
+
+Puedes añadir nuevas propiedades a los objetos de JavaScript existentes de la misma manera que los modificarías.
+
+Así es como podríamos agregar una propiedad bark a nuestro objeto ourDog:
+
+```javascript
+
+ourDog.bark = "bow-wow";
+
+o
+
+ourDog["bark"] = "bow-wow";
+```
+## Elimina propiedades en un objeto de JavaScript
+
+También podemos eliminar propiedades de objetos de esta forma:
+```javascript
+delete ourDog.bark;
+```
+## Usa objetos para hacer búsquedas
+
+Los objetos pueden ser considerados como un almacenamiento clave/valor, como un diccionario. Si tienes datos tabulares, puedes utilizar un objeto para hacer una búsqueda de valores en lugar de una declaración switch o encadenar if/else. Esto es de mucha utilidad cuando se sabe que los datos de entrada están limitados a un cierto rango

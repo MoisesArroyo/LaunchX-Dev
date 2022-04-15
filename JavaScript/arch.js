@@ -741,3 +741,290 @@ console.log(clasificarVolumen(5));
 
 //Reemplazar if..else por switch
 
+function esMenorQue(a, b)
+{
+    /* if(a<b){
+        return true;
+    }
+    else{
+        return false;
+    } */
+    return a<b; //The same thing
+}
+/* console.log(esMenorQue(4,8));
+
+function miFuncion3()
+{
+    console.log("Hola");
+    return "Hola";
+}
+ */
+function raiz(num)
+{
+    if(num<0)
+    {
+        return undefined;
+    }
+    return Math.sqrt(num);
+}
+
+console.log(raiz(4));
+console.log(raiz(-4));
+
+let count = 0;
+
+function cc(card) {
+  // Cambia solo el código debajo de esta línea
+  var dec;
+   switch(card)
+   {  case 2:
+      case 3:
+      case 4:
+      case 5:
+      case 6:
+        count++;
+        break;
+      case 10:
+      case "J":
+      case "Q":
+      case "K":
+      case "A":
+        count--;
+        break;
+   }
+   if(count > 0){
+     dec = "Bet";
+   }else{
+     dec = "Hold";
+   }
+
+  return count + " " + dec;
+  // Cambia solo el código encima de esta línea
+}
+
+cc(2); cc(3); cc(7); cc('K'); cc('A');
+//código de las cartas
+
+//Crear objetos
+
+var miPerro = {
+    "nombre": "Gino",
+    "edad": 5,
+    "peso": 6,
+    "raza": "labrador"
+};
+console.log(miPerro.nombre); //Salida, Gino
+
+var miObjeto = {
+    5 : "cinco" //el 5 lo convierte a cadena 
+};
+
+//acceder a porpiedadesm notacion por corchete.
+
+var miCuaderno = {
+    "color":"verde",
+    "categoria": 3,
+    "numero de paginas": 200,
+    "numero de hojas": 100
+};
+console.log(miCuaderno["numero de paginas"]);
+
+var resul ={
+    1: "moy123",
+    2: "genius234",
+    3: "crazy566",
+    4: "ultimus308"
+};
+var posic = 4;
+console.log(resul[posic]);
+
+//actualiza propiedades
+
+var mochila = {
+    "color": "azul",
+    "tamaño": "mediano",
+    "contenido": ["botella", "agua"]
+};
+
+mochila.color = "rojo"; //cambio
+
+mochila.contenido.push("lapiz"); //se agrega el lapiz al final
+
+console.log(mochila.contenido);
+//Agregar propiedades
+var curso={
+    "titulo" : "Hola mundo",
+    "idioma": "español",
+    "duracion": 30
+}
+
+curso.vistas = 34599;
+console.log(curso.vistas);
+
+delete curso.titulo;
+
+console.log(curso.titulo); //undefined
+
+//objetos para busqueda
+
+function phoneticLookup(val)
+{   var result={
+    "aplpha": "Adams",
+    "bravo": "Boston",
+    "charlie":"chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "Frank"
+};
+    return result(val);
+} 
+//verificar propiedades
+
+var miCuaderno = {
+    "color":"verde",
+    "categoria":3,
+    "precio": 4.42
+};
+
+miCuaderno.hasOwnProperty("color");
+
+function verificarObjeto(obj, propiedad)
+{
+    if(obj.hasOwnProperty(propiedad))
+    {
+        return "Propiedad: "+obj[propiedad];
+    }
+    else{
+        return "El objeto no existe";
+    }
+}
+
+//objetos comletos
+var ordenespiza=
+[
+    {   
+        "tipo":"margarita",
+        "tamaño": "individual",
+        "precio": 5.67,
+        "toppings": [
+            "extra queso",
+            "champiñones",
+            "piña"
+        ],
+        "para llevar": true
+
+    },
+    {
+        "tipo":"cuatro quesos",
+        "tamaño": "familiar",
+        "precio": 10.67,
+        "toppings": [
+            "extra queso",
+            "piminiento",
+            "jamon"
+        ],
+        "para llevar": false
+    }
+]
+
+console.log(ordenespiza[0]["tamaño"]);
+console.log(ordenespiza[1][precio]);
+
+//objetos anidados
+
+var miReceta={
+    "descripcion":"mi postre favorito",
+    "costo": 15.5,
+    "ingredientes": 
+    {
+        "masa":{
+            "harina": "100 grs",
+            "sal": "1 cucharada",
+            "agua": "1 taza"
+        },
+        "cobertura":
+        {
+            "azucar":"120 grm",
+            "chocolate": "4 cucharadas",
+            "mantequilla": "200 grms"
+        }
+    }
+}
+
+console.log(miRectea.ingredientes.cobertura.chocolate); // = cucharadas
+
+console.log(miReceta.ingredientes.cobertura["azucar"]);
+console.log(miReceta.ingredientes,masa["agua"]);
+console.log(miReceta.ingredientes["cobertura"].azucar);
+
+//Arreglos anidados
+var misPlantas =
+[   {
+        tipo: "Flores",
+        lista:["rosas", "tulipanes", "deintes de leon"]
+    },
+    {
+        tipo: "Arboles",
+        lista:
+        [
+            "abedo",
+            "pino",
+            "abedul"
+        ]
+    }
+];
+console.log(misPlantas[0].lista[1]);
+console.log(misPlantas[1].lista[2]);
+//Colección de discos
+
+var coleccionDeDiscos = {
+    7854: {
+        tituloDelAlbum: "Bee Gees Greatest",
+        artista: "Bee Gees",
+        canciones: ["Satyin Alive"]
+    },
+    3467:{
+        tituloDelAlbum: "Bohemian",
+        artista: "Queen",
+        canciones: ["Love me"]
+    }
+}
+
+function actualizarDiscos(discos, id, propiedad, valor)
+{
+    if(valor==="")
+    {
+        delete discos[id].propiedad;
+    }
+    else if(propiedad === "canciones")
+    {
+        discos[id][propiedad]=discos[id][propiedad] || [];
+        discos[id][propiedad].push(valor);
+    }
+    else {
+        discos[id][propiedad]=valor;
+    }
+}
+console.log(coleccionDeDiscos[7854].tituloDelAlbum);
+
+actualizarDiscos(coleccionDeDiscos, 5439, "artista", "ABBA");
+
+console.log(coleccionDeDiscos[5439].canciones);
+
+//Cicloooooooooossssss
+
+var i = 0;
+while(i<=3)
+{
+    console.log("Hola Mundo");
+    i++;
+}
+
+var miArreglo9=[];
+var j=0;
+console.log(miArreglo9);
+while(j<10){
+    miArreglo9.push(i);
+    j++;
+}
+console.log(miArreglo9);
