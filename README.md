@@ -10,4 +10,4 @@ Autor: Moisés Isaí Arroyo Rodríguez
 
 ## Introduccion Frontend
 
-Aqui se encontraran los ejercicios de front end en la carpeta y consecutivamente todo lo demnas.
+Aquí se encontraran los ejercicios de front end en la carpeta y consecutivamente todo lo demás. 
