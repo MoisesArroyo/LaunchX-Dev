@@ -551,3 +551,265 @@ delete ourDog.bark;
 ## Usa objetos para hacer búsquedas
 
 Los objetos pueden ser considerados como un almacenamiento clave/valor, como un diccionario. Si tienes datos tabulares, puedes utilizar un objeto para hacer una búsqueda de valores en lugar de una declaración switch o encadenar if/else. Esto es de mucha utilidad cuando se sabe que los datos de entrada están limitados a un cierto rango
+
+## Manipulando objectos complejos
+
+A veces, es posible que desees almacenar datos en una estructura de datos flexible. Un objeto de JavaScript es una forma de manejar datos flexibles. Permiten combinaciones arbitrarias de cadenas, números, booleanos, arreglos, funciones, y objetos.
+
+## Accede a arreglos anidados
+
+Como hemos visto en ejemplos anteriores, los objetos pueden contener tanto objetos anidados como así también arreglos anidados. De manera similar a como se accede a los objetos anidados, la notación de corchetes de arreglos puede ser encadenada para acceder a arreglos anidados.
+
+## Colección de discos
+
+Se te da un objeto literal que representa una parte de tu colección de álbumes musicales. Cada álbum tiene un número de id único como clave y varias otras propiedades. No todos los álbumes tienen una información completa.
+
+Empiezas con una función updateRecords la cual toma un objeto literal, records, que contiene el álbum musical de la colección, un id, prop (como artist o tracks), y value. Completa la función usando las reglas siguientes para modificar el objeto pasado a la función.
+
+Tu función siempre debe devolver el objeto de colección de registros completo.
+Si prop no es tracks y value no es una cadena vacía, actualiza o establece la propiedad prop del album a value.
+Si prop es tracks pero el álbum no tiene una propiedad tracks, crea un arreglo vacío y agrégale value a él.
+Si prop es tracks y value no es una cadena vacía, agrega value al final del arreglo de tracks existentes del álbum.
+Si value es una cadena vacía, elimina esa propiedad prop del álbum.
+Nota: Se usa una copia del objeto recordCollection para las pruebas.
+
+
+## Itera con el bucle "while" de JavaScript
+
+Puedes ejecutar el mismo código múltiples veces usando un bucle.
+
+El primer tipo de bucle que aprenderemos se llama bucle while porque ejecuta una condición específica mientras esta sea verdadera, y se detiene una vez que esa condición ya no sea verdadera.
+
+## Itera con los bucles "for" de JavaScript
+Puedes ejecutar el mismo código múltiples veces usando un bucle.
+
+El tipo más común de bucle de JavaScript se llama bucle for porque se ejecuta "por" un número específico de veces.
+
+Los bucles for se declaran con tres expresiones opcionales separadas por punto y coma:
+
+for (a; b; c), donde a es la sentencia de inicialización, b es la sentencia condicional, y c es la expresión final.
+
+La sentencia de inicialización se ejecuta una sola vez antes de que el bucle comience. Normalmente se utiliza para definir y configurar tu variable de bucle.
+
+La sentencia condicional es evaluada al principio de cada iteración del bucle y continuará siempre y cuando sea true. Cuando la condición sea false al inicio de la iteración, el bucle dejará de ejecutarse. Esto significa que si la condición comienza como falso, tu bucle nunca se ejecutará.
+
+La expresión final se ejecuta al final de cada iteración del bucle, antes de la siguiente comprobación de condición y se utiliza normalmente para incrementar o disminuir tu contador de bucle.
+
+## Itera números impares con un bucle "for"
+
+Los bucles "for" no tienen que iterar de uno en uno a la vez. Al cambiar nuestra final-expression (expresión final), podemos contar con números pares.
+
+
+## Cuenta hacia atrás con un bucle "for"
+
+Un bucle for también puede contar hacia atrás, siempre que definamos las condiciones adecuadas.
+Para poder disminuirle dos cada iteración, necesitaremos cambiar nuestra inicialización, condición, y expresión final.
+Empezaremos en i = 10 e iteraremos mientras i > 0. Disminuiremos i en 2 por cada bucle con i -= 2.
+
+## Itera a través de un arreglo con un bucle "for"
+
+Una tarea común en JavaScript es iterar a través del contenido de un arreglo. Una forma de hacerlo es con un bucle for. Este código mostrará cada elemento del arreglo arr en la consola:
+Recuerda que los arreglos tienen una indexación basada en cero, lo que significa que el último índice del arreglo es igual a su longitud menos uno (length - 1). Nuestra condición para este bucle es i < arr.length, que detiene el bucle cuando i es igual a length. En este caso, la última iteración es i === 4, es decir, cuando i se convierte en igual a arr.length - 1 y resultados 6 a la consola. Entonces i aumenta a 5, y el bucle termina i < arr.length es false.
+
+## Anida bucles "for"
+Si tienes un arreglo multidimensional, puedes utilizar la misma lógica que aprendimos anteriormente para recorrer tanto el arreglo como cualquier sub-arreglo. Aquí hay un ejemplo:
+
+Esto imprime cada sub-elemento dentro de arr uno a la vez. Ten en cuenta que para el bucle interior, estamos comprobando el .length de arr[i], ya que arr[i] es en sí mismo es un arreglo.
+
+## Itera con el bucle "do...while" de JavaScript
+
+El siguiente tipo de bucle que aprenderás se llama bucle do...while. Se llama bucle do...while porque primero hace (do) una pasada por el código dentro del bucle sin importar qué, y luego continua ejecutando el bucle mientras (while) la condición especificada sea verdadera (true).
+
+Cuando lleguemos a la siguiente línea, no hay ninguna condición para evaluar, así que entramos al código dentro de las llaves y se ejecuta. Añadiremos un único elemento al arreglo y luego incrementaremos i antes de llegar a la verificación de la condición. 
+
+## Reemplaza bucles usando recursión
+
+La recursión es el concepto que una función puede expresarse en términos de sí misma. Para ayudar a comprender esto, comienza pensando en la siguiente tarea: multiplica los primeros n elementos de un arreglo para crear el producto de esos elementos. Usando un bucle for, puedes hacer esto:
+```javascript
+function multiply(arr, n) {
+    let product = 1;
+    for (let i = 0; i < n; i++) {
+      product *= arr[i];
+    }
+    return product;
+  }
+```
+Sin embargo, nota que multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]. Esto significa que puedes reescribir multiply en términos de sí misma y que nunca necesites hacer uso de un bucle.
+```javascript
+  function multiply(arr, n) {
+    if (n <= 0) {
+      return 1;
+    } else {
+      return multiply(arr, n - 1) * arr[n - 1];
+    }
+  }
+```
+La versión recursiva de multiply se desglosa así. En el caso base, donde n <= 0, devuelve 1. Para valores más grandes de n, se llama a sí misma, pero con n - 1. Esa llamada de función se evalúa de la misma manera, llamando a multiply otra vez hasta que n <= 0. En este punto, todas las funciones pueden devolver y la multiply original devuelve la respuesta.
+
+Nota: Las funciones recursivas deben tener un caso base cuando devuelven sin tener que llamar a la función de nuevo (en este ejemplo, cuando n <= 0), de lo contrario nunca podrán terminar de ejecutarse.
+
+## Búsqueda de perfiles
+
+Tenemos un arreglo de objetos que representan a diferentes personas en nuestras listas de contactos.
+
+Una función lookUpProfile que recibe nombre (name) y una propiedad (prop) como argumentos preescritos para ti.
+
+La función debe verificar si el nombre (name) es el nombre de pila del contacto (firstName) y la propiedad (prop) dada es una propiedad de ese contacto.
+
+Si ambos son verdaderos, entonces devolver el "valor" de esa propiedad.
+
+Si name no corresponde a ningún contacto, entonces devuelve la cadena No such contact.
+
+Si prop no corresponde a ninguna propiedad válida de un contacto encontrado que coincida con name entonces devuelve la cadena No such property.
+
+## Genera fracciones aleatorias con JavaScript
+
+Los números aleatorios son útiles para crear comportamientos aleatorios.
+
+JavaScript tiene una función Math.random() que genera un número decimal aleatorio entre 0 (inclusivo) y 1 (exclusivo). Así que Math.random() puede devolver un 0 pero nunca devuelve un 1.
+
+Nota: Así como aprendimos en almacenando valores con el operador de igualdad, todas las llamadas de funciones se resolverán antes de que el return se ejecute, así que podemos devolver (return) el valor de la función Math.random().
+
+## Genera números enteros aleatorios con JavaScript
+Es genial que podamos generar números decimales aleatorios, pero es incluso más útil si lo usamos para generar números enteros aleatorios.
+
+1. Usa Math.random() para generar un decimal aleatorio.
+2. Multiplica ese decimal aleatorio por 20.
+3. Utiliza otra función, Math.floor() para redondear el número hacia abajo a su número entero más cercano.
+
+Recuerda que *Math.random()* nunca devolverá un 1 y porque estamos redondeando hacia abajo, es imposible obtener 20. Esta técnica nos dará un número entero entre 0 y 19.
+
+Poniendo todo junto, así es como se ve nuestro código:
+```javascript
+Math.floor(Math.random() * 20);
+```
+Estamos llamando a Math.random(), multiplicando el resultado por 20 y pasando el valor a la función Math.floor() para redondear el valor hacia abajo al número entero más cercano.
+
+## Genera números enteros aleatorios dentro de un rango
+En lugar de generar un número entero aleatorio entre cero y un número dado como lo hicimos anteriormente, podemos generar un número entero aleatorio que se encuentre dentro de un rango de dos números específicos.
+
+Para ello, definiremos un número mínimo min y un número máximo max.
+
+Esta es la fórmula que utilizaremos. Tómate un momento para leerla e intenta entender lo que este código está haciendo
+```javascript
+Math.floor(Math.random() * (max - min + 1)) + min
+```
+
+## Utiliza la función "parseInt"
+
+La función parseInt() analiza una cadena y devuelve un entero. A continuación, te presentamos un ejemplo:
+```javascript
+const a = parseInt("007");
+``` 
+La función anterior convierte la cadena 007 al entero 7. Si el primer carácter de la cadena no puede ser convertido en un número, entonces devuelve NaN.
+
+Utiliza la función "parseInt" con Radix (Base)
+La función parseInt() analiza una cadena y devuelve un entero. Recibe un segundo argumento para la base (radix), que especifica la base del número representado en la cadena. La base (radix) puede ser un número entero entre 2 y 36.
+
+La llamada a la función se realiza de la siguiente manera:
+```javascript
+parseInt(string, radix);
+```
+Y aquí hay un ejemplo:
+```javascript
+const a = parseInt("11", 2);
+``` 
+La variable radix indica que 11 está en el sistema binario, o base 2. Este ejemplo convierte la cadena 11 a un entero 3.
+
+## Usa el operador condicional (ternario)
+El operador condicional, también llamado el operador ternario, puede utilizarse como una expresión if-else de una sola línea.
+
+La sintaxis es a ? b : c, donde a es la condición, b es el código a ejecutar cuando la condición devuelve true, y c es el código a ejecutar cuando la condición devuelve false.
+
+La siguiente función utiliza una sentencia if/else para comprobar una condición:
+```javascript
+function findGreater(a, b) {
+  if(a > b) {
+    return "a is greater";
+  }
+  else {
+    return "b is greater or equal";
+  }
+}
+``` 
+Esto puede reescribirse usando el operador condicional:
+
+```javascript
+function findGreater(a, b) {
+  return a > b ? "a is greater" : "b is greater or equal";
+}
+``` 
+
+## Usa múltiples operadores condicionales (ternarios)
+En el desafío anterior, usaste un único operador condicional. También puedes encadenarlos para comprobar múltiples condiciones.
+
+La siguiente función utiliza sentencias if, else if, y else para comprobar múltiples condiciones:
+
+```javascript
+function findGreaterOrEqual(a, b) {
+  if (a === b) {
+    return "a and b are equal";
+  }
+  else if (a > b) {
+    return "a is greater";
+  }
+  else {
+    return "b is greater";
+  }
+}
+```
+
+La función anterior puede ser reescrita utilizando múltiples operadores condicionales:
+
+```javascript
+function findGreaterOrEqual(a, b) {
+  return (a === b) ? "a and b are equal" 
+    : (a > b) ? "a is greater" 
+    : "b is greater";
+}
+```
+Se considera buena práctica dar formato a múltiples operadores condicionales de forma que cada condición esté en una línea separada, como se muestra arriba. Usar múltiples operadores condicionales sin una indentación adecuada puede hacer tu código difícil de leer. Por ejemplo:
+
+```javascript
+function findGreaterOrEqual(a, b) {
+  return (a === b) ? "a and b are equal" : (a > b) ? "a is greater" : "b is greater";
+}
+```
+
+## Utiliza recursión para crear una cuenta regresiva
+
+En el desafío anterior, aprendiste como usar la recursión para reemplazar un bucle for. Ahora, echemos un vistazo a una función más compleja que devuelve un arreglo de enteros consecutivos empezando con 1 hasta el número pasado a la función.
+
+Como se menciona en el desafío anterior, habrá un caso base. El caso base le dice a la función recursiva cuando no necesita llamarse a sí misma. Es un caso simple donde el valor de retorno ya se conoce. También habrá una llamada recursiva la cual ejecuta la función original con argumentos diferentes. Si la función se escribe correctamente, eventualmente el caso base será alcanzado.
+
+Por ejemplo, digamos que quieres escribir una función recursiva que devuelva un arreglo conteniendo los números 1 hasta n. Esta función necesitará aceptar un argumento, n que representa el número final. Entonces necesitará llamarse a sí misma con valores progresivamente más pequeños de n hasta que alcance 1. Podrías escribir la función de la siguiente manera:
+```javascript
+function countup(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countup(n - 1);
+    countArray.push(n);
+    return countArray;
+  }
+}
+console.log(countup(5));
+```
+
+El valor [1, 2, 3, 4, 5] se mostrará en la consola.
+
+Al principio, esto parece contraintuitivo ya que el valor de n disminuye, pero los valores en el arreglo final se están incrementando. Esto sucede porque la inserción ocurre al último, después de la llamada recursiva. En el punto donde n es empujado en el arreglo, countup(n - 1) ya ha sido evaluada y devuelto [1, 2, ..., n - 1].
+
+## Usa recursión para crear un rango de números
+
+Continuando con el desafío anterior, te ofrecemos otra oportunidad de crear una función recursiva para resolver un problema.
+
+Hemos definido una función llamada rangeOfNumbers con dos parámetros. La función debe devolver un arreglo de enteros que comienza con el número representado por el parámetro startNum y termina con el número representado por el parámetro endNum. El número inicial será siempre menor o igual que el número final. Tu función debe utilizar recursión, llamándose a sí misma, y no utilizar bucles de ningún tipo. También debe funcionar en el caso que startNum y endNum sean iguales.
+
+## Compara el alcance de las palabras clave "var" y "let"
+
+Si no estás familiarizado con let, echa un vistazo a este desafío.
+
+Cuando declaras una variable con la palabra clave var, esta es declarada globalmente o localmente sí es declarada dentro de una función.
+
+La palabra clave let se comporta de forma similar, pero con algunas características adicionales. Cuanto declaras una variable con la palabra clave let dentro de un bloque, una declaración o expresión. Su alcance está limitado a ese bloque, declaración o expresión.

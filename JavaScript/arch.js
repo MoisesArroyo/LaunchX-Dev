@@ -869,7 +869,7 @@ console.log(curso.titulo); //undefined
 
 function phoneticLookup(val)
 {   var result={
-    "aplpha": "Adams",
+    "alpha": "Adams",
     "bravo": "Boston",
     "charlie":"chicago",
     "delta": "Denver",
@@ -1028,3 +1028,46 @@ while(j<10){
     j++;
 }
 console.log(miArreglo9);
+
+// Configuración
+function phoneticLookup(val) {
+    let result = "";
+  
+    // Cambia solo el código debajo de esta línea
+    var opc={
+      "alpha": "Adams",
+      "bravo": "Boston",
+      "charlie":"Chicago",
+      "delta": "Denver",
+      "echo": "Easy",
+      "foxtrot": "Frank",
+      "": undefined
+  };
+  result = opc[val];
+  // Cambia solo el código encima de esta línea
+    return result;
+  }
+  
+  phoneticLookup("charlie");
+
+/*      Para buscar nombres y propuedades 
+  for (let x = 0; x < contacts.length; x++) {
+    if (contacts[x].firstName === name) {
+      if (contacts[x].hasOwnProperty(prop)) {
+        return contacts[x][prop];
+      } else {
+        return "No such property";
+      }
+    }
+  }
+  return "No such contact"; 
+  
+  */
+/* Ejercicio100
+  if (endNum - startNum === 0) {
+    return [startNum];
+  } else {
+    var numbers = rangeOfNumbers(startNum, endNum - 1);
+    numbers.push(endNum);
+    return numbers;
+  } */
