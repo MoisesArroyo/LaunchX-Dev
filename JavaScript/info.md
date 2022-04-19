@@ -813,3 +813,41 @@ Si no estás familiarizado con let, echa un vistazo a este desafío.
 Cuando declaras una variable con la palabra clave var, esta es declarada globalmente o localmente sí es declarada dentro de una función.
 
 La palabra clave let se comporta de forma similar, pero con algunas características adicionales. Cuanto declaras una variable con la palabra clave let dentro de un bloque, una declaración o expresión. Su alcance está limitado a ese bloque, declaración o expresión.
+
+## Muta un arreglo declarado con const
+Si no estás familiarizado con const, echa un vistazo a este desafío.
+
+La declaración const tiene muchos casos de uso, en el JavaScript moderno.
+
+Algunos desarrolladores prefieren asignar todas sus variables utilizando const por defecto, a menos que sepan que necesitarán reasignar el valor. Solo en ese caso, utilizan let.
+
+Sin embargo, es importante comprender que los objetos (incluyendo arreglos y funciones), asignados a una variable usando const siguen siendo mutables. Usar la declaración const solo previene la reasignación del identificador de una variable.
+
+## Prevenir la mutación del objeto
+Como se vio en el desafío anterior, la declaración const por sí sola no protege la información de la mutación. Para asegurar que tu información no cambie, JavaScript provee una función Object.freeze para prevenir la mutación de datos.
+
+Cualquier intento de cambiar el objeto será rechazado, lanzando un error si el script se ejecuta en modo estricto (strict mode).
+
+
+## Usa funciones flecha para escribir funciones anónimas de manera breve
+
+En JavaScript, usualmente no necesitas nombrar tus funciones, especialmente cuando se pasa una función como argumento a otra función. En su lugar, creamos funciones inline (en línea). No necesitamos nombrar estas funciones porque no las reutilizamos en otro lugar
+Para lograr esto, por lo general se usa la siguiente sintaxis:
+```javascript
+const myFunc = function() {
+  const myVar = "value";
+  return myVar;
+}
+```
+ES6 nos proporciona el azúcar sintáctico, para no tener que escribir funciones anónimas de este modo. En su lugar, puedes usar la sintaxis de función flecha:
+```javascript
+const myFunc = () => {
+  const myVar = "value";
+  return myVar;
+}
+```
+Cuando la función no posee cuerpo y sólo tiene un valor de retorno, la sintaxis de "función de flecha", te permite omitir la palabra clave return, así como los corchetes que rodean el código. Esto ayuda a simplificar las funciones más pequeñas en sentencias de una sola línea:
+```javascript
+const myFunc = () => "value";
+```
+Este código todavía devolverá la cadena value por defecto.
