@@ -851,3 +851,184 @@ Cuando la función no posee cuerpo y sólo tiene un valor de retorno, la sintaxi
 const myFunc = () => "value";
 ```
 Este código todavía devolverá la cadena value por defecto.
+
+
+### Escribe funciones flecha con parámetros
+
+Al igual que una función regular, puedes pasar argumentos a una función flecha.
+
+```javaScript
+const doubler = (item) => item * 2;
+doubler(4);
+```
+doubler(4) devolvería el valor 8.
+
+Si una función flecha tiene un solo parámetro, los paréntesis que encierran el parámetro pueden ser omitidos.
+
+Es posible pasar más de un argumento a una función flecha.
+```javascript
+const multiplier = (item, multi) => item * multi;
+multiplier(4, 2);
+```
+multiplier(4, 2) devolverá el valor 8.
+
+
+### Establece parámetros por defecto para tus funciones
+
+Para ayudarnos a crear funciones más flexibles, ES6 introduce parametros por defecto para funciones.
+
+```javascript
+const greeting = (name = "Anonymous") => "Hello " + name;
+
+console.log(greeting("John"));
+console.log(greeting());
+```
+La consola mostrará las cadenas Hello John y Hello Anonymous.
+
+El parámetro por defecto entra en juego cuando el argumento no es especificado (es indefinido). Como puedes ver en el ejemplo anterior, el parámetro name recibirá su valor por defecto Anonymous cuando no proveas un valor para el parámetro. Puede agregar valores por defecto para tantos parámetros como desees
+
+### Utiliza el parámetro rest con parámetros de función
+
+Para ayudarnos a crear funciones más flexibles, ES6 introduce el parámetro rest para los parámetros de función. Con el parámetro rest, puedes crear funciones que tomen un número variable de argumentos. Estos argumentos se almacenan en un arreglo al que se puede acceder más tarde desde dentro de la función.
+
+```javascript
+function howMany(...args) {
+  return "You have passed " + args.length + " arguments.";
+}
+console.log(howMany(0, 1, 2));
+console.log(howMany("string", null, [1, 2, 3], { }));
+```
+
+La consola mostrará las cadenas You have passed 3 arguments. y You have passed 4 arguments..
+
+El parámetro rest elimina la necesidad de comprobar el arreglo args y nos permite aplicar map(), filter() y reduce() en el arreglo de parámetros.
+
+### Utiliza el operador de propagación para evaluar los arreglos en el lugar
+
+ES6 introduce el operador de propagación, que nos permite expandir arreglos y otras expresiones en lugares donde se esperan múltiples parámetros o elementos.
+
+El siguiente código ES5 usa apply() para calcular el valor máximo en un arreglo:
+```javascript
+var arr = [6, 89, 3, 45];
+var maximus = Math.max.apply(null, arr);
+maximus tendrá un valor de 89.
+```
+
+Tuvimos que usar Math.max.apply(null, arr) porque Math.max(arr) devuelve NaN. Math.max() espera argumentos separados por comas, pero no un arreglo. El operador de propagación hace que esta sintaxis sea más fácil de leer y mantener.
+```javascript
+const arr = [6, 89, 3, 45];
+const maximus = Math.max(...arr);
+maximus tendría un valor de 89.
+```
+
+...arr devuelve un arreglo desempacado. En otras palabras, propaga el arreglo. Sin embargo, el operador de propagación sólo funciona en el lugar, como en un argumento de función o en un arreglo literal. El siguiente código no funcionará:
+
+```javascript
+const spreaded = ...arr;
+```
+
+### Usa sintaxis de desestructuración para extraer valores de objetos
+
+La sintaxis de desestructuración es una sintaxis especial introducida en ES6, para asignar los valores directamente desde un objeto.
+
+```javascript
+const user = { name: 'John Doe', age: 34 };
+
+const name = user.name;
+const age = user.age;
+```
+
+name tendría una cadena con valor John Doe, y age tendría el número 34.
+
+Aquí hay una sentencia de asignación equivalente usando la sintaxis de desestructuración de ES6:
+```javascript
+const { name, age } = user;
+```
+De nuevo, name tendrá una cadena con valor John Doe, y age tendrá el número 34.
+
+Aquí, las variables name y age serán creadas y se asignarán los valores respectivos a partir del objeto user. Puedes observar que esto es mucho más limpio.
+
+Puedes extraer tantos o pocos valores del objeto como desees.
+
+### Usa sintaxis de desestructuración para asignar variables desde objetos
+
+La desestructuración te permite asignar un nuevo nombre de variable al extraer valores. Puedes hacer esto al poner el nuevo nombre después de dos puntos al asignar el valor.
+
+```javascript
+const user = { name: 'John Doe', age: 34 };
+```
+
+Así es como puedes dar nuevos nombres de variables en la asignación:
+
+```javascript
+const { name: userName, age: userAge } = user;
+```
+
+Puedes leerlo como "obtén el valor de user.name y asígnalo a una nueva variable llamada userName" y así sucesivamente. El valor de userName sería la cadena John Doe, y el valor de userAge sería el número 34.
+
+
+### Usa sintaxis de desestructuración para asignar variables desde objetos anidados
+
+Puedes usar los mismos principios de las dos lecciones anteriores para desestructurar los valores desde objetos anidados.
+
+Usando un objeto similar a los ejemplos anteriores:
+```javascript
+const user = {
+  johnDoe: { 
+    age: 34,
+    email: 'johnDoe@freeCodeCamp.com'
+  }
+};
+```
+Así es como se extraen los valores de propiedades de objetos y se los asigna a variables con el mismo nombre:
+
+```javascript
+const { johnDoe: { age, email }} = user;
+```
+
+Y así es como se puede asignar los valores de las propiedades de un objeto a variables con diferentes nombres:
+
+```javascript
+const { johnDoe: { age: userAge, email: userEmail }} = user;
+```
+
+### Usa sintaxis de desestructuración para asignar variables desde arreglos
+
+ES6 hace que desestructurar arreglos sea tan fácil como desestructurar objetos.
+
+Una diferencia clave entre el operador de propagación y la desestructuración de arreglos es que el operador de propagación desempaca todos los contenidos de un arreglo en una lista separada por comas. En consecuencia, no puedes elegir qué elementos deseas asignar como variables.
+
+Desestructurar un arreglo nos permite hacer exactamente eso:
+
+```javascript
+const [a, b] = [1, 2, 3, 4, 5, 6];
+console.log(a, b);
+```
+
+La consola mostrará los valores de a y b como 1, 2.
+
+A la variable a se le asigna el primer valor del arreglo, y a b se le asigna el segundo valor del arreglo. También podemos acceder al valor en cualquier índice de un arreglo con la desestructuración usando comas para alcanzar el índice deseado:
+
+```javascript
+const [a, b,,, c] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, c);
+```
+
+La consola mostrará los valores de a, b, y c como 1, 2, 5.
+
+
+### Utiliza la sintaxis de desestructuración con el parámetro rest para reasignar elementos de un arreglo
+
+En algunas situaciones que implican la desestructuración de arreglos, tal vez queramos recolectar el resto de elementos en un arreglo separado.
+
+El resultado es similar a Array.prototype.slice(), como se muestra a continuación:
+
+```javascript
+const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
+console.log(a, b);
+console.log(arr);
+```
+
+La consola mostrará los valores 1, 2 y [3, 4, 5, 7].
+
+Las variables a y b toman el primer y segundo valor del arreglo. Después de eso, debido a la presencia del parámetro rest, arr obtiene el resto de los valores en forma de un arreglo. El elemento rest sólo funciona correctamente como la última variable en la lista. Por ejemplo, no puedes usar el parámetro rest para capturar un sub-arreglo que deje fuera el último elemento del arreglo original.
